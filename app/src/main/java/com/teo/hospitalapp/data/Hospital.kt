@@ -1,9 +1,9 @@
-package com.teo.hospitalapp.db
+package com.teo.hospitalapp.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "hospital")
 data class Hospital (
     val Address1: String,
     val Address2: String,
