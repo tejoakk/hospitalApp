@@ -1,6 +1,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="hospital"
+            type="com.teo.hospitalapp.data.Hospital"/>
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,7 +48,7 @@
                         style="?android:attr/textAppearanceLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/app_name"
+                        android:text="@{hospital.organisationName}"
                         android:textStyle="bold" />
                 </TableRow>
 
@@ -57,7 +62,7 @@
                         style="?android:attr/textAppearanceLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/type"
+                        android:text="@{hospital.subType}"
                         android:textStyle="bold"
                         android:layout_column="0"/>
                     <TextView
@@ -65,9 +70,22 @@
                         style="?android:attr/textAppearanceLarge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="sector"
+                        android:text="@{hospital.sector}"
                         android:textStyle="bold"
                         android:layout_column="1"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/parent_title"
+                        style="?android:attr/textAppearanceLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/parent_hospital_details" />
                 </TableRow>
 
                 <TableRow
@@ -79,42 +97,53 @@
                         style="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/parent_name"
-                        android:layout_column="0"/>
-
+                        android:text="@{hospital.parentName}"
+                        />
+                </TableRow>
+                <TableRow>
                     <TextView
                         android:id="@+id/parent_code"
                         style="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/parent_name"
-                        android:layout_column="1"/>
+                        android:text="@{hospital.parentODSCode}"
+                        android:textStyle="bold"
+                        />
 
                 </TableRow>
 
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
+                <TableRow>
                     <TextView
-                        android:id="@+id/address_title"
-                        style="?android:attr/textAppearanceLarge"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/address" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/address"
+                        android:id="@+id/address1"
                         style="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/addressDetails" />
+                        android:text="@{hospital.address1}"
+                        />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/address2"
+                        style="?android:attr/textAppearanceLarge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{hospital.address2}" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/address3"
+                        style="?android:attr/textAppearanceMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{hospital.address3}" />
                 </TableRow>
                 <TableRow
                     android:layout_width="match_parent"
@@ -125,7 +154,7 @@
                         style="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/textlink" />
+                        android:text="@{hospital.website}" />
                 </TableRow>
                 <TableRow
                     android:layout_width="match_parent"
@@ -136,7 +165,7 @@
                         style="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/phone" />
+                        android:text="@{hospital.phone}" />
                 </TableRow>
                 <TableRow
                     android:layout_width="match_parent"
@@ -147,7 +176,7 @@
                         style="?android:attr/textAppearanceMedium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/fax" />
+                        android:text="@{hospital.fax}" />
                 </TableRow>
             </TableLayout>
         </ScrollView>

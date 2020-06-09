@@ -9,4 +9,5 @@
     <string name="fax">fax</string>
     <string name="navigation_drawer_header_title">Hospitals</string>
     <string name="settings">settings</string>
+    <string name="parent_hospital_details">Parent Hospital Details</string>
 </resources>

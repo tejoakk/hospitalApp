@@ -15,6 +15,7 @@ import com.teo.hospitalapp.di.Injectable
 import com.teo.hospitalapp.di.injectViewModel
 import com.teo.hospitalapp.ui.data.HospitalDetailViewModel
 import com.teo.hospitalapp.ui.dec.hide
+import com.teo.hospitalapp.ui.dec.setTitle
 import com.teo.hospitalapp.ui.dec.show
 import javax.inject.Inject
 
@@ -74,13 +75,17 @@ class HospitalDetailFragment:  Fragment(), Injectable {
 
     private fun bindView(binding: HospitalDetailsFragmentBinding, hospital: Hospital) {
         hospital.apply {
-//            setTitle(strMeal)
-//            bindImageFromUrl(binding.image, strMealThumb)
-//            binding.name.text = strMeal
-//            binding.instructions.text = strInstructions
-//            val list = getIngredientPairs().filter { it.first.isNullOrBlank().not() && it.second.isNullOrBlank().not() }
-//                .map { "${it.first} ${it.second}" }
-//            binding.ingredient.text = list.joinToString( separator = System.lineSeparator())
+            setTitle("Hospital Details")
+            binding.name.text = organisationName
+            binding.type.text = subType
+            binding.sector.text= sector
+            binding.parentTitle.text=parentName
+            binding.parentCode.text=parentODSCode
+            val address : List<String?> = listOf(address1, address2, address3, city, county, postcode)
+            binding.address1.text = address.joinToString ( separator = System.lineSeparator())
+            binding.website.text = website
+            binding.phone.text =phone
+            binding.fax.text = fax
             this@HospitalDetailFragment.hospital = hospital
         }
     }

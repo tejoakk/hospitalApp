@@ -55,7 +55,6 @@
                 tools:text="NHS" />
 
 
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </layout>
