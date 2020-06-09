@@ -28,7 +28,7 @@ class HospitalDaoTest : DbTest() {
         }
     }
 
-    @Test fun testGetMeals() {
+    @Test fun testGetHospitals() {
         val list = getValue(hospitalDao.getHospitals())
         assertThat(list.size, equalTo(1))
 

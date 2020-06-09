@@ -23,6 +23,7 @@ class HospitalFragment: Fragment(), Injectable {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
     private lateinit var viewModel: HospitalViewModel
 
     override fun onCreateView(
@@ -31,7 +32,7 @@ class HospitalFragment: Fragment(), Injectable {
         savedInstanceState: Bundle?
     ): View? {
 
-
+        viewModel = injectViewModel(viewModelFactory)
         val binding = HospitalFragmentBinding.inflate(inflater, container, false)
         context ?: return binding.root
 
@@ -41,7 +42,7 @@ class HospitalFragment: Fragment(), Injectable {
         )
         binding.recyclerView.adapter = adapter
 
-        viewModel = injectViewModel(viewModelFactory)
+
         subscribeUi(binding, adapter)
 
         setHasOptionsMenu(true)

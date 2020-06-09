@@ -13,6 +13,6 @@ abstract class FragmentBuildersModule {
     abstract fun contributeHospitalFragment(): HospitalFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeMealFragment(): HospitalDetailFragment
+    abstract fun contributeHospitalDetailFragment(): HospitalDetailFragment
 
 }

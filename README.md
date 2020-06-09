@@ -1,6 +1,7 @@
 # Hospital Details App
 
- Android Hospital Details App using ViewModel & LiveData with Retrofit, Glide and Kotlin
+
+ Android Hospital Details App from a csv file using ViewModel & LiveData with Retrofit, Glide and Kotlin
 
 ## Dependencies
  This app demonstrates the MVVM architecture with below dependencies:
