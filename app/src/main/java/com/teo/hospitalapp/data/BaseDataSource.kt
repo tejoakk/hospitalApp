@@ -2,6 +2,7 @@ package com.teo.hospitalapp.data
 
 import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import timber.log.Timber
 
 
@@ -10,7 +11,7 @@ import timber.log.Timber
  */
 abstract class BaseDataSource {
 
-    protected suspend fun <T> getResult(call: () -> Call<ResponseBody>): Result<T> {
+    protected suspend fun <T> getResult(call: suspend () -> Response<T>): Result<T> {
         try {
             val response = call()
             if (response.isSuccessful) {
@@ -22,10 +23,10 @@ abstract class BaseDataSource {
             return error(e.message ?: e.toString())
         }
     }
-
     private fun <T> error(message: String): Result<T> {
         Timber.e(message)
         return Result.error("Network call has failed for a following reason: $message")
     }
 }
+
 

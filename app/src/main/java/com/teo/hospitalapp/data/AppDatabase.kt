@@ -9,7 +9,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.teo.hospitalapp.worker.SeedDatabaseWorker
-import com.teo.recipes.data.Converters
 
 /**
  * The Room database for this app
@@ -36,7 +35,7 @@ abstract class AppDatabase : RoomDatabase() {
         // Create and pre-populate the database. See this article for more details:
         // https://medium.com/google-developers/7-pro-tips-for-room-fbadea4bfbd1#4785
         private fun buildDatabase(context: Context): AppDatabase {
-            return Room.databaseBuilder(context, AppDatabase::class.java, "recipes-db")
+            return Room.databaseBuilder(context, AppDatabase::class.java, "hospital-db")
                     .addCallback(object : RoomDatabase.Callback() {
                         override fun onCreate(db: SupportSQLiteDatabase) {
                             super.onCreate(db)

@@ -1,9 +1,8 @@
-package com.teo.recipes.data
+package com.teo.hospitalapp.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
-import com.teo.hospitalapp.data.Result
 import com.teo.hospitalapp.data.Result.Status.ERROR
 import com.teo.hospitalapp.data.Result.Status.SUCCESS
 import kotlinx.coroutines.Dispatchers

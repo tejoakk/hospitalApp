@@ -1,4 +1,4 @@
-package com.teo.recipes.data
+package com.teo.hospitalapp.data
 
 import androidx.room.TypeConverter
 import java.util.*

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="hospital"
+            type="com.teo.hospitalapp.data.Hospital"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:onClick="@{clickListener}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|clip_vertical"
+            android:layout_margin="@dimen/margin_normal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:maxLines="3"
+                android:text="@{hospital.organisationName}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="Fruit and Cream Cheese Breakfast Pastries" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{hospital.subType}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="Hospital" />
+
+            <TextView
+                android:id="@+id/sector"
+                android:layout_width="wrap_content"
+                android:layout_height="7dp"
+                android:text="@{hospital.sector}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                tools:text="NHS" />
+
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

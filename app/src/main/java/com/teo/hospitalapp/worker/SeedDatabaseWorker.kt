@@ -20,7 +20,7 @@ class SeedDatabaseWorker(
         withContext(Dispatchers.IO) {
 
             try {
-                applicationContext.assets.open("hospital.csv").use {intputStream ->
+                applicationContext.assets.open("Hospital.csv").use {intputStream ->
 
                         val list: List<Hospital> = Parser().toDataSet(intputStream.reader())
 

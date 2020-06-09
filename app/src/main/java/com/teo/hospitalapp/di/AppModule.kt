@@ -42,12 +42,8 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideMealDao(db: AppDatabase) = db.mealDao()
+    fun provideHospitalDao(db: AppDatabase) = db.hospitalDao()
 
-
-    @Singleton
-    @Provides
-    fun provideCategoryDao(db: AppDatabase) = db.categoryDao()
 
     @CoroutineScropeIO
     @Provides

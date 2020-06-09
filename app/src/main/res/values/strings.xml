@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">HospitalApp</string>
+    <string name="type">type</string>
+    <string name="parent_name">parent name</string>
+    <string name="address">address</string>
+    <string name="addressDetails">addressDetails</string>
+    <string name="textlink">textlink</string>
+    <string name="phone">phone</string>
+    <string name="fax">fax</string>
+    <string name="navigation_drawer_header_title">Hospitals</string>
+    <string name="settings">settings</string>
 </resources>
