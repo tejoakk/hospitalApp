@@ -1,6 +1,5 @@
 package com.teo.hospitalapp.data
 
-import com.teo.recipes.data.Result
 import okhttp3.ResponseBody
 import retrofit2.Call
 import timber.log.Timber

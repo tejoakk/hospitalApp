@@ -1,4 +1,4 @@
-package com.teo.recipes.data
+package com.teo.hospitalapp.data
 
 /**
  * A generic class that holds a value with its loading status.

@@ -4,28 +4,35 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "hospital")
-data class Hospital (
-    val Address1: String,
-    val Address2: String,
-    val Address3: String,
-    val City: String,
-    val County: String,
-    val Email: String,
-    val Fax: String,
-    val IsPimsManaged: String,
-    val Latitude: Double,
-    val Longitude: Double,
-    val OrganisationCode: String,
+data class Hospital(
+    val address1: String,
+    val address2: String,
+    val address3: String,
+    val city: String,
+    val county: String,
+    val email: String,
+    val fax: String,
+    val isPimsManaged: Boolean,
+    val latitude: String,
+    val longitude: String,
+    val organisationCode: String,
     @PrimaryKey
-    val OrganisationID: Int,
-    val OrganisationName: String,
-    val OrganisationStatus: String,
-    val OrganisationType: String,
-    val ParentName: String,
-    val ParentODSCode: String,
-    val Phone: String,
-    val Postcode: String,
-    val Sector: String,
-    val SubType: String,
-    val Website: String
+    val organisationID: Int,
+    val organisationName: String,
+    val organisationStatus: String,
+    val organisationType: String,
+    val parentName: String,
+    val parentODSCode: String,
+    val phone: String,
+    val postcode: String,
+    val sector: Sector,
+    val subType: SubType,
+    val website: String
 )
+enum class Sector {
+    NHS, Independent
+}
+
+enum class SubType {
+    Hospital, MentalHealth, UNKNOWN
+}

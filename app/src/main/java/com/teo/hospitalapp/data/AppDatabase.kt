@@ -8,12 +8,8 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
-import com.teo.recipes.category.data.CategoryDao
-import com.teo.recipes.category.data.Category
+import com.teo.hospitalapp.worker.SeedDatabaseWorker
 import com.teo.recipes.data.Converters
-import com.teo.recipes.worker.SeedDatabaseWorker
-import com.teo.recipes.meal.data.Meal
-import com.teo.recipes.meal.data.MealDao
 
 /**
  * The Room database for this app
@@ -23,10 +19,7 @@ import com.teo.recipes.meal.data.MealDao
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun mealDao(): MealDao
-
-    abstract fun categoryDao(): CategoryDao
-
+    abstract fun hospitalDao():HospitalDao
 
     companion object {
 

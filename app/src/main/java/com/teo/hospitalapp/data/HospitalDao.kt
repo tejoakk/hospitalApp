@@ -10,16 +10,16 @@ import androidx.room.*
 interface HospitalDao {
 
 
-    @Query("SELECT * FROM hospital WHERE OrganisationID = :organisationID")
+    @Query("SELECT * FROM hospital WHERE organisationID = :organisationID")
     suspend fun getHospital(organisationID: Int): LiveData<Hospital>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(meals: List<Hospital>)
+    suspend fun insertAll(hospitals: List<Hospital>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(meal: Hospital)
+    suspend fun insert(hospital: Hospital)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun update(meal: Hospital)
+    suspend fun update(hospital: Hospital)
 
 }
