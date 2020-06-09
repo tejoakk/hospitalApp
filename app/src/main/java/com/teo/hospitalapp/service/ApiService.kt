@@ -15,7 +15,7 @@ interface ApiService {
     }
     @Streaming
     @GET
-   suspend fun downloadFile(): Response<Any>
+   suspend fun downloadFile(): Response<ResponseBody>
 
 }
 

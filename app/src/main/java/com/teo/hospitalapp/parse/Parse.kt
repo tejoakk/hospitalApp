@@ -33,8 +33,6 @@ class Parser {
     private val ORG_FAX =21
 
 
-
-
      public  fun toDataSet(reader: Reader): List<Hospital> {
 
             val csvReader = CSVReaderBuilder(reader)
@@ -45,7 +43,7 @@ class Parser {
             var record = csvReader.readNext()
 
             while (record != null) {
-                hospitals.add(Hospital(organisationID = record[ORG_ID].toInt(), organisationCode = record[ORG_CODE], organisationType = record[ORG_TYPE], subType = mapToSubType(record[ORG_SUBTYPE]), sector = mapToSector(record[SEC]) ,
+                hospitals.add(Hospital(organisationID = record[ORG_ID].toInt(), organisationCode = record[ORG_CODE], organisationType = record[ORG_TYPE], subType = record[ORG_SUBTYPE], sector = record[SEC] ,
                 organisationStatus = record[ORG_STATUS], isPimsManaged = record[ORG_ISPIMS].toBoolean(), organisationName = record[ORG_NAME], address1 = record[ORG_ADD1],
                 address2 = record[ORG_ADD2], address3 = record[ORG_ADD3], city = record[ORG_CITY], county = record[ORG_COUNTY],
                 postcode = record[ORG_POSTCODE], latitude = record[ORG_LAT], longitude = record[ORG_LONG], parentODSCode = record[ORG_ODS], parentName = record[ORG_PNAME], phone = record[ORG_PHONE], email = record[ORG_EMAIL],

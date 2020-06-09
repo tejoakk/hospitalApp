@@ -2,6 +2,7 @@ package com.teo.hospitalapp.data
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import com.teo.hospitalapp.parse.Parser
 import com.teo.hospitalapp.testing.OpenForTesting
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -20,7 +21,10 @@ class HospitalRepository @Inject constructor(private val dao: HospitalDao,
             databaseQuery = { dao.getHospitals() },
             networkCall = { hospitalRemoteDataSource.fetchData() }
     ) {
-        listOf(it)?.let { it2 -> dao.insertAll(it2) }
+        it?.byteStream().use{inputStream ->
+            val list: List<Hospital> = Parser().toDataSet(inputStream.reader())
+            dao.insertAll(list)
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.N)

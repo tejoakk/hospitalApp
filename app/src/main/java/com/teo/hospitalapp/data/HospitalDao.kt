@@ -16,7 +16,7 @@ interface HospitalDao {
      fun getHospital(organisationID: Int): LiveData<Hospital>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(hospitals: List<Any>)
+    suspend fun insertAll(hospitals: List<Hospital>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(hospital: Hospital)
