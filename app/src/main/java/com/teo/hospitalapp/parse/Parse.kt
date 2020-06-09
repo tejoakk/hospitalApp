@@ -38,7 +38,7 @@ class Parser {
      public  fun toDataSet(reader: Reader): List<Hospital> {
 
          val csvParser = CSVParserBuilder()
-             .withSeparator('¬')
+             .withSeparator('�')
              .build()
             val csvReader = CSVReaderBuilder(reader)
                 .withCSVParser(csvParser)
