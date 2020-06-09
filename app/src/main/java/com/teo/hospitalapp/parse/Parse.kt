@@ -1,11 +1,13 @@
 package com.teo.hospitalapp.parse
 
+import com.opencsv.CSVParserBuilder
 import com.opencsv.CSVReaderBuilder
 import com.teo.hospitalapp.data.Hospital
 import com.teo.hospitalapp.data.Sector
 import com.teo.hospitalapp.data.SubType
 import java.io.File
 import java.io.Reader
+
 
 class Parser {
 
@@ -35,7 +37,11 @@ class Parser {
 
      public  fun toDataSet(reader: Reader): List<Hospital> {
 
+         val csvParser = CSVParserBuilder()
+             .withSeparator('¬')
+             .build()
             val csvReader = CSVReaderBuilder(reader)
+                .withCSVParser(csvParser)
                 .withSkipLines(1)
                 .build()
 

@@ -43,10 +43,10 @@ class ApiServiceTest {
     }
 
     @Test
-    fun requestCategories() {
+    fun requestHospitals() {
         runBlocking {
             enqueueResponse("Hospital.csv")
-            val resultResponse = service.downloadFile().body()
+            val resultResponse = service.downloadFile("file").body()
 
             val request = mockWebServer.takeRequest()
             assertNotNull(resultResponse)

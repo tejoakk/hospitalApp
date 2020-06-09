@@ -10,7 +10,6 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.allOf
 
-const val category = "Seafood"
 
 val testhos1 = Hospital(organisationID = 21232, organisationName = "Test1",fax = "1231231", website = "12312",
 email = "test1", phone = "sdsaasd",parentName = "",parentODSCode = "",longitude = "",
