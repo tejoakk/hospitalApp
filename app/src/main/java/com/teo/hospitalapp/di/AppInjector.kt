@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
+import com.teo.hospitalapp.App
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
@@ -15,7 +16,7 @@ import dagger.android.support.HasSupportFragmentInjector
  */
 object AppInjector {
 
-    fun init(application: com.teo.hospitalapp.App) {
+    fun init(application: App) {
         DaggerAppComponent.builder().application(application)
             .build().inject(application)
         application
@@ -59,9 +60,9 @@ object AppInjector {
                 .registerFragmentLifecycleCallbacks(
                     object : FragmentManager.FragmentLifecycleCallbacks() {
                         override fun onFragmentCreated(
-                                fm: FragmentManager,
-                                f: Fragment,
-                                savedInstanceState: Bundle?
+                            fm: FragmentManager,
+                            f: Fragment,
+                            savedInstanceState: Bundle?
                         ) {
                             if (f is Injectable) {
                                 AndroidSupportInjection.inject(f)

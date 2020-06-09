@@ -19,7 +19,7 @@ abstract class ViewModelModule {
     @Binds
     @IntoMap
     @ViewModelKey(HospitalDetailViewModel::class)
-    abstract fun bindHospitalViewModel(viewModel: HospitalDetailViewModel): ViewModel
+    abstract fun bindHospitalDetailViewModel(viewModel: HospitalDetailViewModel): ViewModel
 
 
     @Binds

@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
 
         // Set up ActionBar
-        setSupportActionBar(binding.toolbar)
+//        setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
     }

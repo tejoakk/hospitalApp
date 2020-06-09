@@ -76,7 +76,7 @@ class Parser {
     }
 
     public fun processLineByLine(csv: File, processor: (Map<String, String>) -> Unit)  {
-        val sc = "\\u00ac"
+       // val sc = "\\u00ac"
         val header = csv.useLines { it.firstOrNull()?.split("¬") }
             ?: throw Exception("This file does not contain a valid header")
 

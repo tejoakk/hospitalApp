@@ -1,7 +1,7 @@
 package com.teo.hospitalapp.di
 
 import android.app.Application
-import com.teo.hospitalapp.ui.App
+import com.teo.hospitalapp.App
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

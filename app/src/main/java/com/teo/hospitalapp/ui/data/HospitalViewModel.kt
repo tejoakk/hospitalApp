@@ -7,7 +7,9 @@ import com.teo.hospitalapp.data.HospitalRepository
 import javax.inject.Inject
 
 @RequiresApi(Build.VERSION_CODES.N)
-class HospitalViewModel @Inject constructor(repository: HospitalRepository) : ViewModel() {
+class HospitalViewModel @Inject constructor(
+    repository: HospitalRepository
+) : ViewModel() {
 
 
     val hospitals by lazy { repository.observeHospitals() }

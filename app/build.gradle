@@ -45,10 +45,10 @@ android {
     }
 
 }
-kapt {
-    generateStubs = true
-    correctErrorTypes = true
-}
+    //generateStubs = true
+    kapt {
+        correctErrorTypes true
+    }
 
 jacoco {
     toolVersion = "$rootProject.jacocoVersion"
@@ -88,7 +88,14 @@ dependencies {
     implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
     implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
-    //def daggerVer = 2.24 // or latest version
+//    def daggerVer = 2.23.2 // or latest version
+//    def daggerVer = 2.27
+//    implementation "com.google.dagger:dagger:$daggerVer"
+//    implementation "com.google.dagger:dagger-android-support:$daggerVer"
+//    kapt "com.google.dagger:dagger-android-processor:$daggerVer"
+//    kapt "com.google.dagger:dagger-compiler:$daggerVer"
+
+
 
     implementation "com.opencsv:opencsv:4.1"
 

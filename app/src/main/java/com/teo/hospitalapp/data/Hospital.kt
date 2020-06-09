@@ -29,6 +29,7 @@ data class Hospital(
     val subType: String? = null,
     val website: String? = null
 )
+
 enum class Sector {
     NHS, Independent
 }

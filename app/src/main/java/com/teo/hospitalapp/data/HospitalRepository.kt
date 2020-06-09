@@ -21,7 +21,7 @@ class HospitalRepository @Inject constructor(private val dao: HospitalDao,
             databaseQuery = { dao.getHospitals() },
             networkCall = { hospitalRemoteDataSource.fetchData() }
     ) {
-        it?.byteStream().use{inputStream ->
+        it.byteStream().use{inputStream ->
             val list: List<Hospital> = Parser().toDataSet(inputStream.reader())
             dao.insertAll(list)
         }

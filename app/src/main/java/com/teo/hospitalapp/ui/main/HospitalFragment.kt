@@ -30,7 +30,7 @@ class HospitalFragment: Fragment(), Injectable {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = injectViewModel(viewModelFactory)
+
 
         val binding = HospitalFragmentBinding.inflate(inflater, container, false)
         context ?: return binding.root
@@ -41,6 +41,7 @@ class HospitalFragment: Fragment(), Injectable {
         )
         binding.recyclerView.adapter = adapter
 
+        viewModel = injectViewModel(viewModelFactory)
         subscribeUi(binding, adapter)
 
         setHasOptionsMenu(true)
